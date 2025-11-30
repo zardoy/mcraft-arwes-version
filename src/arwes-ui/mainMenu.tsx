@@ -498,12 +498,12 @@ export const ArwesMainMenu = (props: ArwesMainMenuProps) => {
             </Animator> */}
             <Animator>
               <Animated animated={[['y', 20, 0, 0]]}>
-                <Button label="Singleplayer" onClick={wrap(singleplayerAction)} />
+                <Button label="Multiplayer" onClick={wrap(connectToServerAction)} />
               </Animated>
             </Animator>
             <Animator>
               <Animated animated={[['y', 20, 0, 0]]}>
-                <Button label="Multiplayer" onClick={wrap(connectToServerAction)} />
+                <Button label="Singleplayer" onClick={wrap(singleplayerAction)} />
               </Animated>
             </Animator>
             <Animator>
