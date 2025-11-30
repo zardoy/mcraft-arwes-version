@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mcraft Arwes Version</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mcraft Arwes Version">
+    <meta property="og:description" content="Minecraft Web Client with Arwes futuristic UI">
+    <meta property="og:image" content="https://raw.githubusercontent.com/zardoy/minecraft-web-client/refs/heads/next/docs-assets/arwes-banner.webp">
+    <meta property="og:url" content="" id="og-url">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mcraft Arwes Version">
+    <meta name="twitter:description" content="Minecraft Web Client with Arwes futuristic UI">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/zardoy/minecraft-web-client/refs/heads/next/docs-assets/arwes-banner.webp">
     <style>
         * {
             margin: 0;
@@ -29,6 +42,12 @@
     <script>
         // Build iframe URL with query parameters from current location
         (function() {
+            // Set og:url to current page URL
+            const ogUrlMeta = document.getElementById('og-url');
+            if (ogUrlMeta) {
+                ogUrlMeta.content = window.location.href;
+            }
+
             const iframe = document.getElementById('mcraftFrame');
             const baseUrl = 'https://s.mcraft.fun';
             const baseParams = new URLSearchParams('parentFrameMods=1');
