@@ -90,7 +90,7 @@ const SciFiLoader: React.FC<SciFiLoaderProps> = ({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(5, 20, 40, 0.95)',
+        backgroundColor: 'rgba(5, 20, 40, 1)',
         overflow: 'hidden'
       }}
       className={className}
@@ -128,10 +128,9 @@ const SciFiLoader: React.FC<SciFiLoaderProps> = ({
               width: `${circle.width}px`,
               height: `${circle.height}px`,
               borderRadius: '50%',
-              border: '1px dashed',
               borderColor: 'rgba(34, 211, 238, 0.3)',
               borderStyle: 'dashed',
-              borderWidth: '1px',
+              borderWidth: '2px',
               WebkitMaskImage: `repeating-linear-gradient(0deg, transparent, transparent ${circle.dashArray.split(' ')[1]}px, black ${circle.dashArray.split(' ')[1]}px ${circle.dashArray.split(' ')[0]}px)`
             }}
             variants={childVariants}
@@ -237,6 +236,7 @@ const SciFiLoader: React.FC<SciFiLoaderProps> = ({
           style={{
             position: 'relative',
             zIndex: 10,
+            marginTop: 8,
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',

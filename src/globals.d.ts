@@ -17,9 +17,11 @@ declare global {
         miscUiState: {
             hadConnected: boolean
         }
+        serverMetadataConnect: undefined | Record<string, any>
         builtinComponents: {
             Button: React.ComponentType<any>
         }
+        setLoadingScreenStatus: (status: string) => void
     }
 }
 

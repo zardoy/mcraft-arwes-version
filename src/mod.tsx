@@ -12,3 +12,19 @@ window.playSound = (...args: any[]) => {
   }
   originalPlaySound(...args as Parameters<typeof originalPlaySound>)
 }
+
+const oldDispatchEvent = window.dispatchEvent
+//@ts-ignore
+window.dispatchEvent = (event: Event) => {
+  if (event.type === 'connect') {
+    window.setLoadingScreenStatus('CONNECTING TO SERVER...')
+    setTimeout(() => {
+      oldDispatchEvent(event)
+    }, 1000)
+    return
+  }
+  oldDispatchEvent(event)
+}
+
+window.serverMetadataConnect??={}
+window.serverMetadataConnect.isArwes = true
